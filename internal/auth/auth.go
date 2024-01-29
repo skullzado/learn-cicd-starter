@@ -11,7 +11,7 @@ var ErrNoAuthHeaderIncluded = errors.New("no authorization header included")
 // SplitAuthHeader - Splits auth header into slice of strings
 func SplitAuthHeader(authHeader string) ([]string, error) {
 	splitAuthHeader := strings.Split(authHeader, " ")
-	if len(splitAuthHeader) < 2 || splitAuthHeader[0] != "ApiKey" {
+	if len(splitAuthHeader) < 2 || splitAuthHeader[0] != "ApiKey " {
 		return nil, errors.New("malformed authorizationHeader")
 	}
 
